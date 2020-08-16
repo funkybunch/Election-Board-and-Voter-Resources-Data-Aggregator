@@ -1,0 +1,25 @@
+{
+  "name": "election-board-and-voter-resources-data-aggregator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/funkybunch/Election-Board-and-Voter-Resources-Data-Aggregator.git"
+  },
+  "author": "Mark Adkins <mark@bymark.co> (https://bymark.co)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/funkybunch/Election-Board-and-Voter-Resources-Data-Aggregator/issues"
+  },
+  "homepage": "https://github.com/funkybunch/Election-Board-and-Voter-Resources-Data-Aggregator#readme",
+  "dependencies": {
+    "node-html-parser": "^1.2.20",
+    "puppeteer": "^5.2.1",
+    "write-json-file": "^4.3.0"
+  }
+}
