@@ -22,7 +22,6 @@ async function getSPAHTML(url){
 
 async function parseNCBOEs() {
     const boeHTML = await getSPAHTML('https://vt.ncsbe.gov/BOEInfo/PrintableVersion/');
-    let parseError = false;
     let output = [];
     let source = await parser.parse(boeHTML);
     let boes;
@@ -31,6 +30,7 @@ async function parseNCBOEs() {
         for(let i = 0; i < boes.length; i++) {
             let boe = {};
             boe.name = boes[i].childNodes[0].childNodes[1].childNodes[1].rawText.replace(/\r?\t|\r|\t/g, '');
+            boe.website = boes[i].childNodes[0].childNodes[1].childNodes[1].getAttribute("href");
             boe.hours = boes[i].childNodes[0].childNodes[1].childNodes[4].rawText.replace(/\r?\t|\r|\t/g, '');
             boe.director = boes[i].childNodes[1].rawText.replace(/\r?\t|\r|\t/g, '');
             if(boes[i].childNodes[2].childNodes[1].childNodes.length <= 6){
